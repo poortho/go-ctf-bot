@@ -1,0 +1,10 @@
+{
+	"crypto": 1,
+	"for": 2,
+	"misc": 3,
+	"ppc": 4,
+	"pwn": 5,
+	"rev": 6,
+	"web": 7,
+	"solved": 8
+}

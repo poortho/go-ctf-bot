@@ -35,7 +35,6 @@ func main() {
 		os.Exit(1)
 	}
 	err = json.Unmarshal(data, &config)
-	fmt.Println(config)
 
 	// create discord session
 	dg, err := discordgo.New("Bot " + token)

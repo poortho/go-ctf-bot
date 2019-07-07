@@ -100,7 +100,7 @@ func messageCreate(session *discordgo.Session, msg *discordgo.MessageCreate) {
 				os.Exit(5)
 			}
 		} else {
-			_, err := session.ChannelMessageSend(msg.ChannelID, "Invalid args. Usage: `!add [category (pwn, rev, misc, for, crypto, ppc, web)] [point value] [chall name (no spaces)]`")
+			_, err := session.ChannelMessageSend(msg.ChannelID, "Invalid args. Usage: `!add [category (pwn, rev, misc, for, crypto, ppc, web)] [point value] [chall name]`")
 			if err != nil {
 				fmt.Println("Error sending add error message: ", err)
 				os.Exit(6)

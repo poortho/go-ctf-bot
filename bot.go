@@ -89,9 +89,9 @@ func messageCreate(session *discordgo.Session, msg *discordgo.MessageCreate) {
 		args := strings.Fields(msg.Content)
 
 		// create new channel
-		if len(args) == 4 && stringInSlice(args[1], categories) && IsNumeric(args[2]) {
+		if len(args) >= 4 && stringInSlice(args[1], categories) && IsNumeric(args[2]) {
 			_, err := session.GuildChannelCreateComplex(msg.GuildID, discordgo.GuildChannelCreateData{
-				Name: args[1] + "-" + args[2] + "-" + args[3],
+				Name: args[1] + "-" + args[2] + "-" + strings.Join(args[3:], "-"),
 				Type: discordgo.ChannelTypeGuildText,
 				ParentID: strconv.Itoa(config[args[1]]),
 			})
